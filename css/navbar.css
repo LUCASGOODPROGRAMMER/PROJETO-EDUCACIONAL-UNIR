@@ -12,6 +12,7 @@ body{
   min-width: 320px;
   max-width: 960px;
   margin: auto;
+  position: relative;
 }
 
 main, footer{background-color: #ECEBF3;}
@@ -40,3 +41,40 @@ a {
   gap: 5px;
 }
 
+#btn-menu{
+background-color: transparent;
+border: none;
+cursor: pointer;
+}
+
+#menu{
+  display: none;
+  position: absolute;
+  top:6vh;
+  right: 5px;
+  width: 300px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.459);
+  padding: 20px 20px;
+  justify-content: center;
+  transition: 0.5s ease-in-out;
+}
+
+#user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
+.fade-out{
+  opacity: 0;
+}
+
+@media(max-width: 375px){
+  #description{
+    display: none;
+  }
+  #menu{
+    width: 100px;
+  }
+}
