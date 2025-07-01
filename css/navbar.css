@@ -35,6 +35,12 @@ a {
   color: #fff;
 }
 
+#nav-bar #description{
+  color: black;
+}
+
+
+
 .nav-links{
   display: flex;
   align-items: center;
@@ -53,10 +59,12 @@ cursor: pointer;
   top:6vh;
   right: 5px;
   width: 300px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.459);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.452);
   padding: 20px 20px;
   justify-content: center;
   transition: 0.5s ease-in-out;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.459);
 }
 
 #user{
@@ -65,16 +73,71 @@ cursor: pointer;
   align-items: center;
   gap:10px;
 }
-
-.fade-out{
-  opacity: 0;
+#user button{
+  background-color: #ffffff5d;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1em;
 }
 
+#form-login{
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px 0;
+  gap: 50px;
+  transition: 0.5s;
+}
+
+#form-login input,
+#form-login button{
+  min-height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  outline: none
+}
+
+#form-login button{
+  background-color: #2683ED;
+  color: whitesmoke;
+  font-size: 1.5em;
+}
+
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+::placeholder{
+transition: 0.5s;
+}
+:focus::placeholder{
+opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+
 @media(max-width: 375px){
-  #description{
+  #btn-admin{
     display: none;
   }
   #menu{
-    width: 100px;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.473);
   }
 }
