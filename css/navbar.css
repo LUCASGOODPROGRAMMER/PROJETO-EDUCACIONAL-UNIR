@@ -133,12 +133,19 @@ opacity: 0;
   align-items: center;
 }
 
-#bar-search p {
+#bar-search input {
 
-  font-size: 2rem;
+  font-size: 1rem;
   opacity: 0.5;
   color: rgb(70, 70, 70);
-  
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  outline: none;
+}
+
+#bar-search img{
+  width: 50px;
 }
 
 @keyframes fadeIn {
