@@ -23,18 +23,29 @@ btnMenu.addEventListener("click", (e) => {
             menu.classList.remove("fade-out");
             menu.style.display = 'none';
         }, 500);
-    }
+    }[]
 });
 
-const btnUser = document.querySelectorAll("#btn-admin, #config");
+const btnUser = document.querySelectorAll("#btn-admin");
 const formLogin = document.querySelector("#form-login");
 
 btnUser.forEach((btn) => {
     btn.addEventListener("click", () => {
-        if (formLogin.style.display === 'none' || formLogin.style.display === '') {
-            formLogin.style.display = 'flex';
-        } else {
-            formLogin.style.display = 'none';
-        }
+        const isHidden = getComputedStyle(formLogin).display === 'none';
+        formLogin.style.display = isHidden ? 'flex' : 'none';
     });
 });
+
+const btnLogin = document.querySelector("#btn-submit");
+const options = document.querySelectorAll("#options-task");
+
+btnLogin.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    options.forEach((option) => {
+        const isHidden = getComputedStyle(option).display === "none";
+        option.style.display = isHidden ? "flex" : "none";
+    });
+});
+
+
