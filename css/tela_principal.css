@@ -21,7 +21,6 @@
   display: none;
   justify-content: space-around;
   align-items: end;
-  
   gap: 10px;
   opacity: 0.7;
   margin-top: 10px;
@@ -43,35 +42,17 @@
     font-size: 1.2em;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media(max-width:700px){
   #grid-box{
     grid-template-columns: 300px
   }
-
+  #bar-search{
+    width: 200px;
+  }
+  #input-search{
+    width: 110px;
+  }
+  #nav-login{
+    display: none;
+  }
 }
