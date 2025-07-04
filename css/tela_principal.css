@@ -1,10 +1,26 @@
 
+
+#container{
+  margin: 0 auto;
+  width: fit-content; /* ou defina uma largura fixa, tipo 80%, 600px etc. */
+  display: grid;
+}
+
+
+
+#btn-add{
+  margin: 20px 0;
+  place-self: end;
+  display: none;
+  border: 1px solid black;
+  padding: 2px;
+}
+
 #grid-box {
   display: grid;
   grid-template-columns: minmax(300px, 320px) minmax(300px, 320px);;
   gap: 40px;
   justify-content: center; /* Centraliza horizontalmente */
-  margin: 20px 10px;
 }
 
 .box-game {
