@@ -37,7 +37,7 @@ btnUser.forEach((btn) => {
 });
 
 const btnLogin = document.querySelector("#btn-submit");
-const options = document.querySelectorAll("#options-task, #btn-add");
+const options = document.querySelectorAll(".options-task, #btn-new");
 
 btnLogin.addEventListener("click", (e) => {
     e.preventDefault();
