@@ -1,0 +1,129 @@
+.section{
+    display: block;
+    place-content: center;
+    place-items: center;
+    height: 100vh;
+    text-align: start;
+}
+
+
+#primeira-etapa {
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 0 5px rgb(82, 58, 111);
+    padding: 50px 25px;
+    border-radius: 10px;
+    text-wrap: wrap;
+    margin: 0 10px;
+    width: 90%;
+    min-width: 200px;
+    max-width: 1000px;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.input-values {
+    border-radius: 10px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.428) 0px 0px 5px;
+    padding: 0 20px;
+    font-size: 20px;
+    min-height: 50px;
+    outline: none;
+    opacity: 0.8;
+}
+.input-values:focus{
+    opacity: 1;
+}
+
+
+
+
+#container-imagem {
+    display: block;
+}
+
+#file {
+    display: none;
+}
+
+#upload {
+    padding: 12px 24px;
+    background-color: #2e86de;
+    color: white;
+    font-family: Arial, sans-serif;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: none;
+}
+
+#upload:hover {
+    background-color: #1b4f72;
+}
+
+#png {
+    background-color: black;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#preview {
+    display: none;
+    max-width: 200px;
+    margin-top: 10px;
+}
+
+#btn-next {
+  padding: 12px 24px;
+  background-color: #2e86de;        /* Azul vibrante */
+  color: white;
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 20px;
+  place-self: end;
+}
+
+#btn-next:hover {
+  background-color: #1b4f72;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+}
+
+#btn-next:active {
+  transform: scale(0.98);
+  background-color: #154360;
+}
+
+
+@media(max-width: 860px){
+    #primeira-etapa{
+        display: block;
+    }
+    #upload{
+        place-self: start;
+        margin-top: 20px;
+    }
+}
+@media(max-width: 420px){
+        .input-values{
+        font-size: 1em;
+    }
+}

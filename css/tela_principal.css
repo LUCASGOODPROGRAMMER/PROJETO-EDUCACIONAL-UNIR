@@ -64,17 +64,3 @@
 }
 
 
-@media(max-width:700px){
-  #grid-box{
-    grid-template-columns: 300px
-  }
-  #bar-search{
-    width: 200px;
-  }
-  #input-search{
-    width: 110px;
-  }
-  #nav-login{
-    display: none;
-  }
-}
