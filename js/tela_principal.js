@@ -6,7 +6,7 @@ const btnConfig = document.querySelectorAll(".btn-edit")
 const btnAdd = document.querySelector("#btn-new");
 
 btnAdd.addEventListener("click", () => {
-window.location.href = "#"
+window.location.href = "forms/html/form1.html"
 });
 
 const gridBox = document.querySelector("#grid-box");
