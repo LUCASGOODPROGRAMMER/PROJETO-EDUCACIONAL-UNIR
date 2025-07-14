@@ -30,7 +30,7 @@
 .input-values {
     border-radius: 10px;
     border: none;
-    box-shadow: rgba(0, 0, 0, 0.428) 0px 0px 5px;
+    box-shadow: #0000006d 0px 0px 5px;
     padding: 0 20px;
     font-size: 20px;
     min-height: 50px;

@@ -1,3 +1,24 @@
+/* Exemplo em css/page_inicial.css */
+body {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+#logo-unir{
+    display: flex;
+}
+#logo-unir p {
+    color: #017ff5;
+    font-size: 1.5rem;
+}
+#next {
+    background-color: #59A3E3;
+    padding: 10px;
+    border-radius: 5px;
+}
 
 #banner{
     height: 200px;
@@ -64,13 +85,14 @@
 
 #container-next{
     height: 300px;
-    display: block;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 #btn{
-    width: 90%;
+    width: 100%;
     min-width: 300px;
     max-width: 500px;
     min-height: 50px;
@@ -79,7 +101,7 @@
     background-color: #208EF5;
     font-size: 1.5rem;
     font-family: "Josefin Sans", sans-serif;
-    text-transform:lowercase;
+    padding: 20px;
 
 }
 
@@ -101,4 +123,5 @@
         font-size: 0.8rem;
     }
     #container-message p{font-size: 1.3rem;}
+    #next{scale:0.6}
 }

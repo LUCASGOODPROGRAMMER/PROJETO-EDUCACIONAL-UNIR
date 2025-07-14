@@ -14,13 +14,12 @@ body {
   max-width: 960px;
   margin: auto;
   position: relative;
+  background-color: #cfe5ff;
 }
 
-body,
-footer {
+main{
   background-color: #ECEBF3;
 }
-
 a {
   text-decoration: none;
   color: black;
@@ -49,66 +48,51 @@ a {
   gap: 5px;
 }
 
-#btn-menu {
+#btn-menu, #btn-logar{
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
-#menu {
-  display: none;
+#menu, #form-login{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   position: absolute;
   top: 6vh;
-  right: 5px;
   width: 300px;
+  height: auto;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.452);
   padding: 20px 20px;
-  justify-content: center;
+  justify-content: start;
   transition: 0.5s ease-in-out;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.459);
   z-index: 1;
+  padding: 20px;
 }
 
-#user {
+.options{
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  transition: .4s ease-in-out;
+}
+.options img{
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+.options a {
+  font-size: 1.5rem;
 }
 
-#user button {
-  background-color: #ffffff5d;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1em;
+.options a:hover{
+  color: white;
 }
 
-#form-login {
-  display: none;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 20px 0;
-  gap: 50px;
-  transition: 0.5s;
+#form-login{
+  right: 5px;
 }
-
-#form-login input,
-#form-login button {
-  min-height: 40px;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-  outline: none
-}
-
-#form-login button {
-  background-color: #2683ED;
-  color: whitesmoke;
-  font-size: 1.5em;
-}
-
 
 .fade-in {
   animation: fadeIn 0.5s ease-out forwards;
