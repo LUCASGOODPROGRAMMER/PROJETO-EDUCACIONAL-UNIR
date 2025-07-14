@@ -104,6 +104,7 @@ a {
 
 ::placeholder {
   transition: 0.5s;
+  font-size: 1rem;
 }
 
 :focus::placeholder {
@@ -138,6 +139,52 @@ a {
 #bar-search #img-capybara {
   width: 49px;
 }
+
+#form-login{
+  text-align: center;
+}
+
+#form-login h1{
+  color: white;
+  font-family: Helvetica;
+  font-weight: lighter;
+}
+
+#form-login input,#form-login button{
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 1rem;
+  opacity: 0.9;
+  transition: 1s  ease-in-out;
+}
+
+#form-login input:focus{
+  opacity: 1;
+}
+
+#form-login #submit-login{
+  background-color: #40A9F5;
+  cursor: pointer;
+}
+
+#form-login #submit-login:hover{
+  background-color: #0087F4;
+  color: white;
+}
+
+#btn-alert{
+  background: rgba(255, 255, 255, 0.1);
+  color:#0055f4;
+  text-decoration: underline;
+  cursor: pointer;
+  align-self: center;
+  place-self: center;
+}
+
+
 
 @keyframes fadeIn {
   from {
