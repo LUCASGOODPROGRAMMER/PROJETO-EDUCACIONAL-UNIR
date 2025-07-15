@@ -2,6 +2,7 @@ main{
     height: 100vh;
     text-align: center;
     padding: 20px 10px 0;
+    position: relative;
 }
 main h1{
     font: normal lighter 2rem Helvetica;
@@ -27,6 +28,7 @@ main h1{
 }
 .container-info{
     flex: 1;
+    min-height: 150px;
 }
 
 .container-info h2{
@@ -56,6 +58,22 @@ main h1{
 }
 
 .container-options button i{
+    cursor: pointer;
+}
+
+#btn-nova-tarefa {
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+    cursor: default; /* cursor padrão, pois só o ícone é clicável */
+}
+
+#btn-nova-tarefa i {
+    font-size: 2rem;
+    pointer-events: auto; /* só o ícone recebe o clique */
     cursor: pointer;
 }
 
