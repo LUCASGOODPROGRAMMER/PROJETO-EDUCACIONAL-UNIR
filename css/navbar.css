@@ -17,9 +17,10 @@ body {
   background-color: #cfe5ff;
 }
 
-main{
+main {
   background-color: #ECEBF3;
 }
+
 a {
   text-decoration: none;
   color: black;
@@ -48,13 +49,16 @@ a {
   gap: 5px;
 }
 
-#btn-menu, #btn-logar{
+#btn-menu,
+#btn-logar {
   background-color: transparent;
   border: none;
   cursor: pointer;
+  font-size: 1.2rem;
 }
 
-#menu, #form-login{
+#menu,
+#form-login {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -65,32 +69,35 @@ a {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.452);
   padding: 20px 20px;
   justify-content: start;
-  transition: 0.5s ease-in-out;
+  transition: .3s ease-in-out;
   border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.459);
+  background-color: rgba(255, 255, 255, 0.301);
   z-index: 1;
   padding: 20px;
 }
 
-.options{
+.options {
   display: flex;
   align-items: center;
   transition: .4s ease-in-out;
 }
-.options img{
+
+.options img {
   width: 32px;
   height: 32px;
   margin-right: 10px;
 }
+
 .options a {
   font-size: 1.5rem;
 }
 
-.options a:hover{
-  color: white;
+.options a:hover {
+  color: rgb(75, 75, 75);
+  scale: 1.01;
 }
 
-#form-login{
+#form-login {
   right: 5px;
 }
 
@@ -104,7 +111,7 @@ a {
 
 ::placeholder {
   transition: 0.5s;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 :focus::placeholder {
@@ -140,51 +147,54 @@ a {
   width: 49px;
 }
 
-#form-login{
+#form-login {
   text-align: center;
 }
 
-#form-login h1{
+#form-login h1 {
   color: white;
   font-family: Helvetica;
   font-weight: lighter;
 }
 
-#form-login input,#form-login button{
-  height: 40px;
+#form-login input,
+#form-login button {
+  height: 50px;
   border-radius: 5px;
   border: none;
   outline: none;
   padding: 10px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   opacity: 0.9;
-  transition: 1s  ease-in-out;
+  transition: 1s ease-in-out;
 }
 
-#form-login input:focus{
+#form-login input:focus {
   opacity: 1;
 }
 
-#form-login #submit-login{
+#form-login #submit-login {
   background-color: #40A9F5;
   cursor: pointer;
 }
 
-#form-login #submit-login:hover{
+#form-login #submit-login:hover {
   background-color: #0087F4;
   color: white;
 }
 
-#btn-alert{
-  background: rgba(255, 255, 255, 0.1);
-  color:#0055f4;
+#form-login a {
+  color: #0055f4;
   text-decoration: underline;
   cursor: pointer;
   align-self: center;
   place-self: center;
+  text-transform: lowercase;
 }
 
-
+#form-login h1{
+  color: black;
+}
 
 @keyframes fadeIn {
   from {
@@ -206,17 +216,20 @@ a {
   }
 }
 
-@media(max-width:700px){
-  #grid-box{
+@media(max-width:700px) {
+  #grid-box {
     grid-template-columns: 300px
   }
-  #bar-search{
+
+  #bar-search {
     width: 200px;
   }
-  #input-search{
+
+  #input-search {
     width: 110px;
   }
-  #nav-login{
+
+  #nav-login {
     display: none;
   }
 }
