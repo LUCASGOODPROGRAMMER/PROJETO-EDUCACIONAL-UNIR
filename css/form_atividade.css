@@ -33,12 +33,31 @@ main h1{
 .container-template {
     display: flex;
     flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-in-out;
     height: auto;
     box-shadow: 0 0 5px #523A6F;
     padding: 30px;
     gap: 20px;
     border-radius: 5px;
     width: clamp(300px, 700px, 700px);
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.fade-out {
+    opacity: 0 !important;
+    pointer-events: none;
+    
+}
+
+.fade-in {
+    opacity: 1 !important;
+    pointer-events: auto;
 }
 
 .container-template input {
@@ -117,5 +136,14 @@ main h1{
 }
 .container-template input[type="submit"]:hover {
     background-color: #2979c9;
+}
+
+.container-num-perguntas{
+    display: flex;
+    justify-content: space-between;
+}
+
+.num-perguntas {
+    align-self: start;
 }
 

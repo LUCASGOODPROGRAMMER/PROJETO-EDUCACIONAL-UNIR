@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +9,6 @@
     <script src="js/navbar.js" defer></script>
     <script src="js/form_atividade.js" defer></script>
 </head>
-
 <body>
     <script>
         fetch('header.html')
@@ -22,16 +20,23 @@
     </script>
     <main>
         <h1>FORMULARIO DE QUIZ</h1>
-        <form class="container-template">
+        <form class="container-template visible">
             <input class="nome" type="text" placeholder="nome" required>
             <input class="tema" type="text" placeholder="tema" required>
             <input class="descricao" type="text" placeholder="descrição" required>
             <button class="upload">
                 <p>UPLOAD</p><i class="bi bi-cloud-arrow-up-fill"></i>
             </button>
-            <input class="capa-img" type="file">
+            <input class="capa-img" type="file" required accept="image/*">
             <p>dimensão indicada 16:9</p> <!--1920x1080-->
-            <input type="submit" value="PRÓXIMO">
+            <input class="proximo form1" type="submit" value="PRÓXIMO">
+        </form>
+        <form class="container-template visible">
+            <p>ANTES DE PROSSEGUIR, INSIRA O NUMERO DE PERGUNTAS QUE ESSE QUIZ VAI TER</p>
+            <div class="container-num-perguntas">
+                <input class="num-perguntas" type="number" min="1" max="30" required>
+                <input class="proximo form2" type="submit" value="PRÓXIMO">
+            </div>
         </form>
     </main>
 </body>

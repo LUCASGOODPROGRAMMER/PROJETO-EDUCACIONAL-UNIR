@@ -1,9 +1,6 @@
 //eventos
 document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa os eventos da navbar
-    if (window.initNavbarEvents) {
-        window.initNavbarEvents();
-    }
+
     const btnUpload = document.querySelector('.upload');
     const inputFile = document.querySelector('.capa-img');
 
