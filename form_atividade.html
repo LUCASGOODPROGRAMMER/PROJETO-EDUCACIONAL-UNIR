@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+    <!-- Metadados e links de estilos/scripts -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
@@ -9,7 +11,9 @@
     <script src="js/navbar.js" defer></script>
     <script src="js/form_atividade.js" defer></script>
 </head>
+
 <body>
+    <!-- Importa o header dinâmico -->
     <script>
         fetch('header.html')
             .then(response => response.text())
@@ -20,17 +24,22 @@
     </script>
     <main>
         <h1>FORMULARIO DE QUIZ</h1>
+        <!-- Primeiro formulário: dados do quiz -->
         <form class="container-template visible">
             <input class="nome" type="text" placeholder="nome" required>
             <input class="tema" type="text" placeholder="tema" required>
             <input class="descricao" type="text" placeholder="descrição" required>
+            <!-- Botão para upload de imagem -->
             <button class="upload">
                 <p>UPLOAD</p><i class="bi bi-cloud-arrow-up-fill"></i>
             </button>
+            <!-- Input de arquivo para imagem de capa -->
             <input class="capa-img" type="file" required accept="image/*">
             <p>dimensão indicada 16:9</p> <!--1920x1080-->
+            <!-- Botão para avançar para o próximo formulário -->
             <input class="proximo form1" type="submit" value="PRÓXIMO">
         </form>
+        <!-- Segundo formulário: número de perguntas -->
         <form class="container-template visible">
             <p>ANTES DE PROSSEGUIR, INSIRA O NUMERO DE PERGUNTAS QUE ESSE QUIZ VAI TER</p>
             <div class="container-num-perguntas">
@@ -38,6 +47,18 @@
                 <input class="proximo form2" type="submit" value="PRÓXIMO">
             </div>
         </form>
+        <!-- Terceiro formulário: perguntas e respostas -->
+        <form class="container-template visible">
+            <h2>PERGUNTAS E RESPOSTAS</h2>
+            <input class="pergunta" type="text" placeholder="Qual a sua pergunta?" required>
+            <p>NÚMERO DE RESPOSTAS:</p>
+            <div class="num-respostas-group">
+                <label><input type="radio" name="num-respostas" value="1"> 1</label>
+                <label><input type="radio" name="num-respostas" value="2"> 2</label>
+                <label><input type="radio" name="num-respostas" value="3"> 3</label>
+                <label><input type="radio" name="num-respostas" value="4"> 4</label>
+            </div>
+            <input class="resposta" type="text" placeholder="Resposta 1" required>
     </main>
 </body>
 

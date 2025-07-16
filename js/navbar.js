@@ -1,14 +1,17 @@
+// Função para inicializar os eventos da navbar e do menu dinâmico
 function initNavbarEvents() {
+    // Seletores dos elementos do header
     const btnMenu = document.querySelector("#btn-menu");
     const btnLogar = document.querySelector("#btn-logar");
     const menu = document.querySelector("#menu");
     const form = document.querySelector("#form-login");
 
-    // Adiciona a classe 'hide' a todas divs com id 'menu' que não possuem a classe 'hide'
+    // Garante que todas as divs com id menu estejam ocultas inicialmente
     document.querySelectorAll('div#menu:not(.hide)').forEach(div => {
         div.classList.add('hide');
     });
 
+    // Evento para abrir/fechar o menu lateral
     if (btnMenu && menu) {
         btnMenu.addEventListener("click", (e) => {
             e.preventDefault();
@@ -16,6 +19,7 @@ function initNavbarEvents() {
         });
     }
 
+    // Evento para abrir/fechar o formulário de login
     if (btnLogar && form) {
         btnLogar.addEventListener("click", (e) => {
             e.preventDefault();
@@ -23,6 +27,7 @@ function initNavbarEvents() {
         });
     }
 
+    // Evento para desbloquear opções de admin após login
     const submitLogin = document.querySelector('#submit-login');
     if (submitLogin) {
         submitLogin.addEventListener('click', function() {
@@ -35,5 +40,5 @@ function initNavbarEvents() {
     }
 }
 
-// Chame essa função após o fetch do header
+// Torna a função disponível globalmente para ser chamada após o fetch do header
 window.initNavbarEvents = initNavbarEvents;

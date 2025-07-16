@@ -1,4 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+/* Reset de estilos básicos */
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +8,7 @@
     outline: none;
 }
 
+/* Estilo do body */
 body {
   min-width: 320px;
   max-width: 960px;
@@ -14,9 +16,8 @@ body {
   background-color: #cfe5ff;
 }
 
+/* Estilo do main container */
 main{
-    /*display: grid;
-    grid-template-columns: minmax(300px, 700px);*/
     display: flex;
     flex-direction: column;
     background-color: #ECEBF3;
@@ -26,14 +27,16 @@ main{
     padding: 5px 5px;
 }
 
+/* Título principal */
 main h1{
     margin: 20px 0;
 }
 
+/* Estilo dos formulários */
 .container-template {
     display: flex;
     flex-direction: column;
-    opacity: 0;
+    opacity: 0; /* Inicialmente invisível */
     pointer-events: none;
     transition: opacity 0.5s ease-in-out;
     height: auto;
@@ -44,23 +47,27 @@ main h1{
     width: clamp(300px, 700px, 700px);
 }
 
+/* Formulário visível */
 .visible {
     opacity: 1;
     pointer-events: auto;
 }
 
+/* Fade out para transição */
 .fade-out {
     opacity: 0 !important;
     pointer-events: none;
-    
 }
 
+/* Fade in para transição */
 .fade-in {
     opacity: 1 !important;
     pointer-events: auto;
 }
 
-.container-template input {
+/* Estilo dos inputs */
+.container-template input,
+.resposta {
     border: none;
     outline: none;
     min-height: 40px;
@@ -71,17 +78,20 @@ main h1{
     box-shadow: 0 0 5px #523A6F;
 }
 
+/* Input de arquivo escondido */
 .container-template input[type="file"]{
     display: none;
 }
 
+/* Placeholder animado */
 .container-template input::placeholder{
     transition: opacity 0.3s ease-in-out;
 }
 .container-template input:focus::placeholder{
     opacity: 0;
 }
-    
+
+/* Botão de upload */
 .container-template button{
     display: flex;
     justify-content: center;
@@ -98,16 +108,19 @@ main h1{
     transition: .4s;
 }
 
+/* Hover do botão de upload */
 .container-template button:hover{
     background-color: #2979c9;
 }
 
+/* Ícone do botão de upload */
 .container-template button i {
     background-color: black;
     border-radius: 5px;
     padding: 0 10px;
 }
 
+/* Botão de submit */
 .container-template input[type="submit"] {
     background-color: #2E86DE;
     color: white;
@@ -126,24 +139,61 @@ main h1{
     align-self: end;
 }
 
+/* Preview da imagem enviada */
 .img-preview {
     max-width: 100%;
     max-height: 200px;
     display: block;
     margin-top: 10px;
     border-radius: 5px;
-    box-shadow: 0 0 5px
+    box-shadow: 0 0 5px;
 }
+
+/* Hover do botão de submit */
 .container-template input[type="submit"]:hover {
     background-color: #2979c9;
 }
 
+/* Container do input de número de perguntas */
 .container-num-perguntas{
     display: flex;
     justify-content: space-between;
 }
 
+/* Input de número de perguntas */
 .num-perguntas {
     align-self: start;
 }
 
+/* Estilo para o grupo de número de respostas */
+.container-template .num-respostas-group {
+    display: flex;
+    gap: 20px;
+    margin: 15px 0;
+}
+
+/* Estilo dos labels dos radio buttons */
+.container-template label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #e3e3f7;
+    border-radius: 5px;
+    padding: 8px 16px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 3px #523A6F33;
+}
+
+.container-template label:hover {
+    background: #d0d0ee;
+}
+
+/* Estilo dos radio buttons */
+.container-template input[type="radio"] {
+    accent-color: #2E86DE;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
