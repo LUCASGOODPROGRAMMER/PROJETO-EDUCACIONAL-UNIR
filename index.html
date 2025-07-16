@@ -11,12 +11,13 @@
   </head>
   <body>
     <script>
-      fetch('header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.body.insertAdjacentHTML('afterbegin', data);
-        });
-    </script>
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('afterbegin', data);
+      if (window.initNavbarEvents) window.initNavbarEvents();
+    });
+</script>
     <main>
       <div id="container-message">
         <p>
