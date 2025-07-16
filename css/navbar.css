@@ -59,7 +59,6 @@ a {
 
 #menu,
 #form-login {
-  display: flex;
   flex-direction: column;
   gap: 20px;
   position: absolute;
@@ -191,7 +190,9 @@ a {
   color: black;
 }
 
-
+.hide{
+  display: none;
+}
 
 @keyframes fadeIn {
   from {
