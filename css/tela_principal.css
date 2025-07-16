@@ -51,8 +51,14 @@
     font-size: 1.2em;
 }
 
-.hide {
-  display: none;
+
+
+::placeholder {
+  transition: 0.5s;
+  font-size: 1.2rem;
+}
+
+:focus::placeholder {
   opacity: 0;
 }
 

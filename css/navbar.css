@@ -109,15 +109,6 @@ a {
   animation: fadeOut 0.5s ease-out forwards;
 }
 
-::placeholder {
-  transition: 0.5s;
-  font-size: 1.2rem;
-}
-
-:focus::placeholder {
-  opacity: 0;
-}
-
 #bar-search {
   background-color: #D9D9D9;
   display: flex;
@@ -194,6 +185,11 @@ a {
 
 #form-login h1{
   color: black;
+}
+
+.hide {
+  display: none;
+  opacity: 0;
 }
 
 @keyframes fadeIn {
