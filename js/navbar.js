@@ -29,6 +29,7 @@ function initNavbarEvents() {
             const optionsHideDiv = document.querySelector('#menu .options.hide');
             if (optionsHideDiv) {
                 optionsHideDiv.classList.toggle('hide');
+                alert('Opções de administrador desbloqueadas!');
             }
         });
     }
