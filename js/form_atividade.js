@@ -59,4 +59,29 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 500); // tempo igual ao da transição CSS
         });
     }
+
+    // Seleciona o grupo de radios e o formulário de perguntas
+    const respostasGroup = document.querySelector('.num-respostas-group');
+    const formPerguntas = document.querySelector('.container-template:nth-of-type(3)');
+
+    if (respostasGroup && formPerguntas) {
+        respostasGroup.addEventListener('change', function(e) {
+            // Só executa se o alvo for um radio
+            if (e.target && e.target.type === 'radio') {
+                // Remove todos os inputs de resposta existentes
+                formPerguntas.querySelectorAll('.resposta').forEach(input => input.remove());
+
+                // Adiciona o número de inputs de resposta conforme o valor selecionado
+                const num = parseInt(e.target.value, 10);
+                for (let i = 1; i <= num; i++) {
+                    const input = document.createElement('input');
+                    input.className = 'resposta';
+                    input.type = 'text';
+                    input.placeholder = `Resposta ${i}`;
+                    input.required = true;
+                    formPerguntas.appendChild(input);
+                }
+            }
+        });
+    }
 });
