@@ -11,22 +11,6 @@ function initNavbarEvents() {
         div.classList.add('hide');
     });
 
-    // Evento para abrir/fechar o menu lateral
-    if (btnMenu && menu) {
-        btnMenu.addEventListener("click", (e) => {
-            e.preventDefault();
-            menu.classList.toggle("hide");
-        });
-    }
-
-    // Evento para abrir/fechar o formulário de login
-    if (btnLogar && form) {
-        btnLogar.addEventListener("click", (e) => {
-            e.preventDefault();
-            form.classList.toggle("hide");
-        });
-    }
-
     // Evento para desbloquear opções de admin após login
     const submitLogin = document.querySelector('#submit-login');
     if (submitLogin) {

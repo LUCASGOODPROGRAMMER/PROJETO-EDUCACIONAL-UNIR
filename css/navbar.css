@@ -76,6 +76,9 @@ a {
   padding: 20px;
    margin: 10px;
 }
+.hide {
+  display: none;
+}
 
 .options {
   display: flex;
@@ -188,10 +191,7 @@ a {
   color: black;
 }
 
-.hide {
-  display: none;
-  opacity: 0;
-}
+
 
 @keyframes fadeIn {
   from {
