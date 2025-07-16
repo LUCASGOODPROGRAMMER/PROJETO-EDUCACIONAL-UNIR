@@ -41,7 +41,7 @@ main h1{
     width: clamp(300px, 700px, 700px);
 }
 
-input {
+.container-template input {
     border: none;
     outline: none;
     min-height: 40px;
@@ -52,18 +52,18 @@ input {
     box-shadow: 0 0 5px #523A6F;
 }
 
-input[type="file"]{
+.container-template input[type="file"]{
     display: none;
 }
 
-input::placeholder{
+.container-template input::placeholder{
     transition: opacity 0.3s ease-in-out;
 }
-input:focus::placeholder{
+.container-template input:focus::placeholder{
     opacity: 0;
 }
     
-button{
+.container-template button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,11 +79,11 @@ button{
     transition: .4s;
 }
 
-button:hover{
+.container-template button:hover{
     background-color: #2979c9;
 }
 
-button i {
+.container-template button i {
     background-color: black;
     border-radius: 5px;
     padding: 0 10px;

@@ -10,9 +10,16 @@
     <script src="js/gerenciador.js"></script>
 </head>
 <body>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
     <main>
         <h1>GERENCIADOR DE TAREFAS</h1>
-        <a id="btn-nova-tarefa" href="form_add.html"><i class="bi bi-plus-circle-fill"></i></a>
+        <a id="btn-nova-tarefa" href="form_atividade.html"><i class="bi bi-plus-circle-fill"></i></a>
         <div class="container-gerenciador">
             <img src="" alt="">
             <div class="container-info">

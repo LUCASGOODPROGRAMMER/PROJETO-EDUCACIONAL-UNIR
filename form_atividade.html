@@ -1,24 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORMULARIO</title>
     <link rel="stylesheet" href="css/form_atividade.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <script src="js/form_atividade.js"></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/form_atividade.js" defer></script>
 </head>
+
 <body>
+    <script>
+        fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.body.insertAdjacentHTML('afterbegin', data);
+            });
+    </script>
     <main>
-            <h1>FORMULARIO DE QUIZ</h1>
-            <form class="container-template">
-                <input class="nome" type="text" placeholder="nome" required>
-                <input class="tema" type="text" placeholder="tema" required>
-                <input class="descricao" type="text" placeholder="descrição" required>
-                <button class="upload"><p>UPLOAD</p><i class="bi bi-cloud-arrow-up-fill"></i></button>
-                <input class="capa-img" type="file">
-                <p>dimensão indicada 16:9</p> <!--1920x1080-->
-            </form>
+        <h1>FORMULARIO DE QUIZ</h1>
+        <form class="container-template">
+            <input class="nome" type="text" placeholder="nome" required>
+            <input class="tema" type="text" placeholder="tema" required>
+            <input class="descricao" type="text" placeholder="descrição" required>
+            <button class="upload">
+                <p>UPLOAD</p><i class="bi bi-cloud-arrow-up-fill"></i>
+            </button>
+            <input class="capa-img" type="file">
+            <p>dimensão indicada 16:9</p> <!--1920x1080-->
+        </form>
     </main>
 </body>
+
 </html>

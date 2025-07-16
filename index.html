@@ -10,19 +10,13 @@
     <script src="js/page_inicial.js" defer></script>
   </head>
   <body>
-    <header>
-      <nav id="nav-bar">
-        <div id="logo-unir">
-          <img src="" alt="">
-          <p></p>
-        </div>
-        <a id="next" href="telaprincipal.html">PAGINA PRINCIPAL</a>
-      </nav>
-      <div id="banner">
-        <img src="img/pagina_inicial/indio_americano.png" alt="">
-        <p>SEJA BEM VINDO</p>
-      </div>
-    </header>
+    <script>
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.body.insertAdjacentHTML('afterbegin', data);
+        });
+    </script>
     <main>
       <div id="container-message">
         <p>
