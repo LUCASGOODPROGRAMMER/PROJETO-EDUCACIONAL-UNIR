@@ -10,8 +10,7 @@
 }
 
 body {
-  min-width: 320px;
-  max-width: 960px;
+  width: 100vw;
   margin: auto;
   position: relative;
   background-color: #cfe5ff;
@@ -19,6 +18,7 @@ body {
 
 main {
   background-color: #ECEBF3;
+  width: 100%;
 }
 
 a {

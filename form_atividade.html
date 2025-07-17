@@ -40,25 +40,14 @@
             <input class="proximo form1" type="submit" value="PRÓXIMO">
         </form>
         <!-- Segundo formulário: número de perguntas -->
-        <form class="container-template visible">
-            <p>ANTES DE PROSSEGUIR, INSIRA O NUMERO DE PERGUNTAS QUE ESSE QUIZ VAI TER</p>
-            <div class="container-num-perguntas">
-                <input class="num-perguntas" type="number" min="1" max="30" required>
-                <input class="proximo form2" type="submit" value="PRÓXIMO">
-            </div>
+        <form id="form2" class="container-template visible">
+            <p>QUANTAS PERGUNTAS?</p>
+            <input class="num-perguntas" type="number" min="1" max="30" required>
         </form>
         <!-- Terceiro formulário: perguntas e respostas -->
         <form class="container-template visible">
-            <h2>PERGUNTAS E RESPOSTAS</h2>
-            <input class="pergunta" type="text" placeholder="Qual a sua pergunta?" required>
-            <p>NÚMERO DE RESPOSTAS:</p>
-            <div class="num-respostas-group">
-                <label><input type="radio" name="num-respostas" value="1"> 1</label>
-                <label><input type="radio" name="num-respostas" value="2"> 2</label>
-                <label><input type="radio" name="num-respostas" value="3"> 3</label>
-                <label><input type="radio" name="num-respostas" value="4"> 4</label>
-            </div>
-            <input class="resposta" type="text" placeholder="Resposta 1" required>
+            
+        </form>
     </main>
 </body>
 

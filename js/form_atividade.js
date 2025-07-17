@@ -60,26 +60,80 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Seleciona o grupo de radios e o formulário de perguntas
-    const respostasGroup = document.querySelector('.num-respostas-group');
-    const formPerguntas = document.querySelector('.container-template:nth-of-type(3)');
+    // Seleciona o input de número de perguntas e o formulário de perguntas
+    const numPerguntasInput = document.querySelector('.num-perguntas');
+    const perguntasForm = document.querySelector('.container-template:nth-of-type(3)');
 
-    if (respostasGroup && formPerguntas) {
-        respostasGroup.addEventListener('change', function(e) {
-            // Só executa se o alvo for um radio
-            if (e.target && e.target.type === 'radio') {
-                // Remove todos os inputs de resposta existentes
-                formPerguntas.querySelectorAll('.resposta').forEach(input => input.remove());
+    if (numPerguntasInput && perguntasForm) {
+        numPerguntasInput.addEventListener('change', function() {
+            // Limpa perguntas antigas
+            perguntasForm.innerHTML = '';
 
-                // Adiciona o número de inputs de resposta conforme o valor selecionado
-                const num = parseInt(e.target.value, 10);
-                for (let i = 1; i <= num; i++) {
-                    const input = document.createElement('input');
-                    input.className = 'resposta';
-                    input.type = 'text';
-                    input.placeholder = `Resposta ${i}`;
-                    input.required = true;
-                    formPerguntas.appendChild(input);
+            // Gera perguntas conforme o valor
+            const total = parseInt(numPerguntasInput.value, 10);
+            for (let i = 1; i <= total; i++) {
+                // Cria section.perguntas
+                const section = document.createElement('section');
+                section.className = 'perguntas';
+
+                // Título da pergunta
+                const h2 = document.createElement('h2');
+                h2.textContent = `PERGUNTA ${i.toString().padStart(2, '0')}`;
+                section.appendChild(h2);
+
+                // Input da pergunta
+                const perguntaInput = document.createElement('input');
+                perguntaInput.className = 'pergunta';
+                perguntaInput.type = 'text';
+                perguntaInput.placeholder = 'Qual a sua pergunta?';
+                perguntaInput.required = true;
+                section.appendChild(perguntaInput);
+
+                // Texto número de respostas
+                const p = document.createElement('p');
+                p.textContent = 'NÚMERO DE RESPOSTAS:';
+                section.appendChild(p);
+
+                // Grupo de radios
+                const respostasGroup = document.createElement('div');
+                respostasGroup.className = 'num-respostas-group';
+                for (let v = 1; v <= 4; v++) {
+                    const label = document.createElement('label');
+                    const radio = document.createElement('input');
+                    radio.type = 'radio';
+                    radio.name = `num-respostas-${i}`;
+                    radio.value = v;
+                    label.appendChild(radio);
+                    label.appendChild(document.createTextNode(` ${v}`));
+                    respostasGroup.appendChild(label);
+                }
+                section.appendChild(respostasGroup);
+
+                // Adiciona evento para criar inputs de resposta para cada pergunta
+                respostasGroup.addEventListener('change', function(e) {
+                    // Remove respostas antigas
+                    section.querySelectorAll('.resposta').forEach(input => input.remove());
+                    // Adiciona novas respostas
+                    if (e.target && e.target.type === 'radio') {
+                        const num = parseInt(e.target.value, 10);
+                        for (let r = 1; r <= num; r++) {
+                            const input = document.createElement('input');
+                            input.className = 'resposta';
+                            input.type = 'text';
+                            input.placeholder = `Resposta ${r}`;
+                            input.required = true;
+                            section.appendChild(input);
+                        }
+                    }
+                });
+
+                // Adiciona section ao formulário
+                perguntasForm.appendChild(section);
+
+                // Adiciona linha separadora, exceto na última
+                if (i < total) {
+                    const hr = document.createElement('hr');
+                    perguntasForm.appendChild(hr);
                 }
             }
         });
