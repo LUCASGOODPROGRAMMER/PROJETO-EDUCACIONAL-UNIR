@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!imgPreview) {
                     imgPreview = document.createElement('img');
                     imgPreview.className = 'img-preview';
-                    imgPreview.style.maxWidth = '100%';
+                    imgPreview.style.maxWidth = '400px';
                     imgPreview.style.marginTop = '10px';
                     // Insere a imagem logo após o input file
                     inputFile.parentNode.insertBefore(imgPreview, inputFile.nextSibling);
@@ -76,12 +76,61 @@ document.addEventListener('DOMContentLoaded', function() {
                 h2.textContent = `PERGUNTA ${i.toString().padStart(2, '0')}`;
                 section.appendChild(h2);
 
+                const perguntaRow = document.createElement('div');
+                perguntaRow.style.display = 'flex';
+                perguntaRow.style.alignItems = 'center';
+                perguntaRow.style.gap = '10px';
+
+                // Input da pergunta
                 const perguntaInput = document.createElement('input');
                 perguntaInput.className = 'pergunta';
                 perguntaInput.type = 'text';
                 perguntaInput.placeholder = 'Qual a sua pergunta?';
                 perguntaInput.required = true;
-                section.appendChild(perguntaInput);
+                perguntaRow.appendChild(perguntaInput);
+
+                // Botão quadrado para imagem
+                const imgBtn = document.createElement('button');
+                imgBtn.type = 'button';
+                imgBtn.className = 'btn-img-pergunta';
+                imgBtn.textContent = '1:1';
+                perguntaRow.appendChild(imgBtn);
+
+                // Input de imagem oculto
+                const imgInput = document.createElement('input');
+                imgInput.type = 'file';
+                imgInput.accept = 'image/*';
+                imgInput.style.display = 'none';
+                imgInput.className = 'img-pergunta';
+                perguntaRow.appendChild(imgInput);
+
+                // Preview da imagem
+                const imgPreview = document.createElement('img');
+                imgPreview.className = 'img-preview-pergunta';
+                imgPreview.style.display = 'none';
+                imgPreview.style.marginLeft = '10px';
+                perguntaRow.appendChild(imgPreview);
+
+                // Evento para abrir seletor de imagem
+                imgBtn.addEventListener('click', function() {
+                    imgInput.click();
+                });
+
+                // Evento para mostrar preview e esconder o botão
+                imgInput.addEventListener('change', function() {
+                    const file = imgInput.files[0];
+                    if (file) {
+                        imgPreview.src = URL.createObjectURL(file);
+                        imgPreview.style.display = 'block';
+                        imgBtn.style.display = 'none'; // Esconde o botão quadrado
+                    } else {
+                        imgPreview.style.display = 'none';
+                        imgBtn.style.display = 'flex'; // Mostra o botão quadrado novamente
+                    }
+                });
+
+                // Adiciona a linha ao section
+                section.appendChild(perguntaRow);
 
                 const p = document.createElement('p');
                 p.textContent = 'NÚMERO DE RESPOSTAS:';
