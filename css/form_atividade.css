@@ -201,6 +201,36 @@ main h1{
 }
 
 .perguntas input {
-   
+    margin: 0;
     width: 100%;
+    margin: 10px;
+}
+
+.respostas-container {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.resposta-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 5px;
+    transition: background-colo 0.3s;
+}
+
+.resposta-item.correta {
+    background: #d4ffd4;
+    border: 2px solid #2ecc40;
+}
+
+.resposta-item.errada {
+    background: #ffd4d4;
+    border: 2px solid #ff4d4d;
+}
+
+.radio-correta {
+    accent-color: #2E86DE;
 }

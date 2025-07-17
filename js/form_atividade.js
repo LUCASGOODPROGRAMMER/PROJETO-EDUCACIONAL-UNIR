@@ -66,22 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (numPerguntasInput && perguntasForm) {
         numPerguntasInput.addEventListener('change', function() {
-            // Limpa perguntas antigas
             perguntasForm.innerHTML = '';
-
-            // Gera perguntas conforme o valor
             const total = parseInt(numPerguntasInput.value, 10);
             for (let i = 1; i <= total; i++) {
-                // Cria section.perguntas
                 const section = document.createElement('section');
                 section.className = 'perguntas';
 
-                // Título da pergunta
                 const h2 = document.createElement('h2');
                 h2.textContent = `PERGUNTA ${i.toString().padStart(2, '0')}`;
                 section.appendChild(h2);
 
-                // Input da pergunta
                 const perguntaInput = document.createElement('input');
                 perguntaInput.className = 'pergunta';
                 perguntaInput.type = 'text';
@@ -89,12 +83,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 perguntaInput.required = true;
                 section.appendChild(perguntaInput);
 
-                // Texto número de respostas
                 const p = document.createElement('p');
                 p.textContent = 'NÚMERO DE RESPOSTAS:';
                 section.appendChild(p);
 
-                // Grupo de radios
                 const respostasGroup = document.createElement('div');
                 respostasGroup.className = 'num-respostas-group';
                 for (let v = 1; v <= 4; v++) {
@@ -109,28 +101,65 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 section.appendChild(respostasGroup);
 
-                // Adiciona evento para criar inputs de resposta para cada pergunta
+                // Container para respostas e seleção da correta
+                const respostasContainer = document.createElement('div');
+                respostasContainer.className = 'respostas-container';
+
+                // Adiciona inputs de resposta e radios para marcar a correta
                 respostasGroup.addEventListener('change', function(e) {
                     // Remove respostas antigas
-                    section.querySelectorAll('.resposta').forEach(input => input.remove());
-                    // Adiciona novas respostas
+                    respostasContainer.innerHTML = '';
                     if (e.target && e.target.type === 'radio') {
                         const num = parseInt(e.target.value, 10);
+
+                        // Título para seleção da resposta correta
+                        const correctTitle = document.createElement('p');
+                        correctTitle.textContent = 'Selecione a resposta correta:';
+                        respostasContainer.appendChild(correctTitle);
+
                         for (let r = 1; r <= num; r++) {
+                            const respostaDiv = document.createElement('div');
+                            respostaDiv.className = 'resposta-item';
+
+                            // Input de resposta
                             const input = document.createElement('input');
                             input.className = 'resposta';
                             input.type = 'text';
                             input.placeholder = `Resposta ${r}`;
                             input.required = true;
-                            section.appendChild(input);
+
+                            // Radio para resposta correta
+                            const radioCorreta = document.createElement('input');
+                            radioCorreta.type = 'radio';
+                            radioCorreta.name = `correta-${i}`;
+                            radioCorreta.value = r;
+                            radioCorreta.className = 'radio-correta';
+
+                            respostaDiv.appendChild(input);
+                            respostaDiv.appendChild(radioCorreta);
+
+                            respostasContainer.appendChild(respostaDiv);
                         }
                     }
                 });
 
-                // Adiciona section ao formulário
+                respostasContainer.addEventListener('change', function(ev) {
+                    if (ev.target.classList.contains('radio-correta')) {
+                        // Remove todas as classes
+                        respostasContainer.querySelectorAll('.resposta-item').forEach(item => {
+                            item.classList.remove('correta');
+                            item.classList.add('errada');
+                        });
+                        // Adiciona classe correta apenas ao selecionado
+                        ev.target.closest('.resposta-item').classList.add('correta');
+                        ev.target.closest('.resposta-item').classList.remove('errada');
+                    }
+                });
+
+                section.appendChild(respostasContainer);
+
                 perguntasForm.appendChild(section);
 
-                // Adiciona linha separadora, exceto na última
                 if (i < total) {
                     const hr = document.createElement('hr');
                     perguntasForm.appendChild(hr);
